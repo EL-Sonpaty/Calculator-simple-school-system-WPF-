@@ -1,0 +1,9 @@
+﻿<Application x:Class="Ahmed_Salah_Calculator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Ahmed_Salah_Calculator"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary Source="Resources/Button-Styles.Xaml" />
+    </Application.Resources>
+</Application>

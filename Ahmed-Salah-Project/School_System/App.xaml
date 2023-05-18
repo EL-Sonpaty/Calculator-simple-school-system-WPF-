@@ -1,0 +1,9 @@
+﻿<Application x:Class="School_System.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:School_System"
+             StartupUri="/View/First_Window.xaml">
+    <Application.Resources>
+        <ResourceDictionary Source="Resources/Styles/Buttons_Style.xaml"/>
+    </Application.Resources>
+</Application>

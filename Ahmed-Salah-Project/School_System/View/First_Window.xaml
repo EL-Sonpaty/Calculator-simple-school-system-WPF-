@@ -1,0 +1,92 @@
+﻿<Window x:Class="School_System.First_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:School_System"
+        mc:Ignorable="d"
+        Title="Teacher Info" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush  ImageSource="/Resources/images/background/Class.jpeg" ></ImageBrush>
+    </Window.Background>
+
+
+
+
+    <!--#region 01-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock FontSize="15" Margin="40 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Select Teacher Name :"></TextBlock>
+            <ComboBox x:Name="TeachName" ItemsSource="{Binding TeachersList}" SelectedItem="{Binding SelectedItem}"  Margin="10 10 0 10" Width="300" Height="30"></ComboBox>
+
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4.5*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <TextBlock FontSize="25" Margin="40 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Name :   "></TextBlock>
+                    <TextBox Text="{Binding TeacherName ,UpdateSourceTrigger=PropertyChanged}" Margin="20 0 0 0" Width="334" Height="30" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <TextBlock FontSize="25" Margin="40 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Id :       "></TextBlock>
+                    <TextBox Text="{Binding TeacherId ,UpdateSourceTrigger=PropertyChanged}" Margin="20 0 0 0" Width="347" Height="30"  />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="2">
+                    <TextBlock FontSize="25" Margin="40 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Subject :  "></TextBlock>
+                    <ComboBox ItemsSource="{Binding SubjectList}" SelectedItem="{Binding TeacherSubject}" Margin="20 0 0 0" Width="321" Height="30" ></ComboBox>
+                </StackPanel>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Save New" FontSize="14" FontFamily="Bold" x:Name="SAVE" Visibility="Hidden" Grid.Column="3" Margin="0 10 0 10"   Width="100" Height="30" HorizontalAlignment="Center" Command="{Binding SaveNew}" Click="SAVE_Click">
+                    </Button>
+                    <Button Content="Remove" Grid.Column="1"  FontFamily="Bold" Margin="0 10 0 10"    HorizontalAlignment="Center" Command="{Binding Remove}" Click="Button_Click_1"/>
+
+                    <Button  Grid.Column="2" Margin="0 10 0 10" Content="Next"    Click="next" />
+
+
+                    <Button Style="{StaticResource Equal_Button}"
+                         Margin="0 10 0 10" Grid.Column="0"   Width="150" Height="40" HorizontalAlignment="Right"  Command="{Binding AddNew}" Click="Button_Click">
+                        <ContentControl Content="Add New teacher" FontSize="14" FontFamily="Bold"></ContentControl>
+                    </Button>
+
+
+                </Grid>
+            </Grid>
+            <StackPanel Grid.Column="1" Margin="10 50 10 10">
+                <Image Width="120" Height="120" 
+                       Source="{Binding TeacherImage ,UpdateSourceTrigger=PropertyChanged}"/>
+                <Button x:Name="Upload" Visibility="Hidden" Grid.Row="4" Margin="0 10 0 10"   Width="120" Height="30" HorizontalAlignment="Center" Grid.Column="0" Command="{Binding UploadPhoto}" >
+                    <ContentControl Content="Upload Image" FontSize="14" FontFamily="Cooper"></ContentControl>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+    <!--#endregion-->
+    <!--#region 02-->
+
+    <!--#endregion-->
+
+
+</Window>
